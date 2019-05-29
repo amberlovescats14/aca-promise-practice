@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 const UsersCount = (props) => {
   return (
@@ -10,4 +11,8 @@ const UsersCount = (props) => {
   )
 }
 
-export default UsersCount
+const mapStateToProps = (state) => ({
+  users: state.users
+})
+
+export default connect(mapStateToProps, null)(UsersCount)
